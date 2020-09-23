@@ -1,0 +1,21 @@
+/*Variables for fonts*/ 
+
+$font-stackI: 'Ribeye Marrow', cursive;
+
+$font-stackII: 'Antic Didone', serif;
+
+$font-stackIII: 'Open Sans', sans-serif;
+
+$font-stack-quote: 'Homemade Apple', cursive;
+
+/*Variables for color*/
+
+$primary-color: #f1d5c0;
+
+$darker-primary: darken($primary-color, 50%);
+
+$lighter-primary: lighten($primary-color, 50%);
+
+$header-color: #bcada2;
+
+$footer-color: #cd8d5c;

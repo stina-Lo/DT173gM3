@@ -1,0 +1,193 @@
+@import 'variables';
+@import 'normalize';
+@import 'mixins';
+
+body {
+    width: 100%;
+    height: 100%;
+}
+
+html {
+    width: 100%;
+    height: 100%;
+}
+
+
+p {
+    font-family: $font-stackIII;
+    max-width: 600px;
+    line-height: 150%;
+}
+
+.logo {
+    @include logo-theme(true);
+}
+
+h2,
+h3 {
+    font-family: $font-stackII;
+}
+
+h1 {
+    font-family: $font-stackI;
+}
+
+.quote {
+    font-family: $font-stack-quote;
+}
+
+
+.socialmediaicon img {
+    @include box(35px);
+}
+
+.firstSection {
+    @include nav-styles;
+    background-color: white;
+
+    /*nesting*/
+    h1,
+    h2 {
+        margin-left: 10px;
+    }
+}
+
+.headerItems {
+    @include header-items;
+}
+
+.navAndLogo {
+    @include nav-and-logo;
+}
+
+body {
+    @include display-grid;
+    height: 100%;
+    grid-template-columns: repeat(12, 1fr);
+
+
+}
+
+header {
+    @include flex-column;
+    @include grid-all-columns;
+    justify-content: flex-start;
+    grid-row: 1 / 5;
+    background-color: $header-color;
+}
+
+/*inheritance*/
+main {
+    @include basic-styles;
+    @include grid-all-columns;
+    grid-row: 5 / 9;
+    background-color: $primary-color;
+}
+
+footer {
+    @include basic-styles;
+    @include flex-row;
+    @include grid-all-columns;
+    @include space-evenly;
+    grid-row: 9 / 13;
+    background-color: $footer-color;
+}
+
+/*Extend inheritance example*/
+
+%fact-box {
+    border: 1px solid #ccc;
+    padding: 10px;
+    color: #333;
+}
+
+.message {
+    @extend %fact-box;
+}
+
+.article {
+    padding: 6em;
+}
+
+.article p {
+    margin: 4em;
+}
+
+#tiny {
+    height: 303px;
+    width: 303px;
+}
+
+#burgerMenu {
+    height: 40px;
+    width: 35px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    z-index: 1001;
+    padding: 5px;
+}
+
+
+#burgerMenu:hover {
+    cursor: pointer;
+}
+
+.burgerBun {
+    height: 4px;
+    width: 100%;
+    background: black;
+    border-radius: 3px;
+    transition: all 0.3s linear;
+    position: relative;
+    transform-origin: 1px;
+    z-index: 1001;
+}
+
+#searchImg {
+    width: 60px;
+    height: 60px;
+}
+
+/*Nesting css rules*/
+nav {
+    transition: transform 0.3s ease-in-out;
+    width: 100%;
+
+    ul {
+        @include flex-row;
+        @include space-evenly;
+        width: 100%;
+        z-index: 2;
+        color: black;
+        list-style: none;
+        padding-inline-start: 0px;
+    }
+
+    li {
+        display: inline-block;
+    }
+
+    a {
+        color: black;
+        display: block;
+        text-decoration: none;
+        font-family: $font-stackII;
+    }
+}
+
+.headerItems {
+    padding: 20px;
+}
+
+
+
+/*tablet screen size and mobile*/
+@media only screen and (max-width:799px) {
+    .firstSection {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        align-items: center;
+    }
+}

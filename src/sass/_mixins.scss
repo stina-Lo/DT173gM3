@@ -1,0 +1,93 @@
+
+
+/*if else example*/
+
+@mixin logo-theme($use-border: false ,$font-stack: $font-stackII) {
+    @if $use-border {
+        border-style: solid;
+    } @else {
+        border-style: none;
+    }
+    font-family: $font-stack;
+}
+
+/*box mixings*/
+
+@mixin box ($width, $padding: 0px, $height: $width) {
+    width: $width;
+    height: $height;
+    padding: $padding;
+}
+
+/*Flexbox toolkit*/
+
+@mixin flex-column {
+    display: flex;
+    flex-direction: column;
+}
+
+
+@mixin flex-row {
+    display: flex;
+    flex-direction: row;
+}
+@mixin space-evenly {
+    justify-content: space-evenly;
+}
+
+@mixin flex-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@mixin flex-center-column {
+    @include flex-center;
+    flex-direction: column;
+}
+
+@mixin flex-center-vert {
+    display: flex;
+    align-items: center;
+}
+
+@mixin flex-center-horiz {
+    display:flex;
+    justify-content: center;
+}
+/*flex grid mixin*/
+@mixin basic-styles {
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+@mixin nav-styles {
+    display: flex; 
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+@mixin header-items {
+    display: flex; 
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+@mixin nav-and-logo {
+    display: flex; 
+    flex-direction: row;
+    justify-content: start;
+}
+
+@mixin display-grid {
+    display: -ms-grid;
+    display: grid;
+}
+
+@mixin grid-all-columns {
+    grid-column: 1 /  13;
+}
